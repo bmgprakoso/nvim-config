@@ -45,4 +45,23 @@ return {
     -- Toggle comment
     'numToStr/Comment.nvim',
   },
+  {
+    -- Break bad habits when using vim motions
+    'm4xshen/hardtime.nvim',
+    lazy = false,
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    opts = {},
+  },
+  {
+    -- Vim motions assistance
+    'tris203/precognition.nvim',
+  },
+  {
+    -- Nvim notification
+    'rcarriga/nvim-notify',
+    config = function()
+      vim.notify = require 'notify'
+      vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = '#1e1e2e' })
+    end,
+  },
 }
